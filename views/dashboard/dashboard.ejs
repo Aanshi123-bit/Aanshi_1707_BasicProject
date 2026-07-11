@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Hogwarts Academy</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>🏰 Hogwarts Academy</h2>
+
+        <a href="/logout">Logout</a>
+
+    </nav>
+
+    <section class="dashboard">
+
+        <div class="welcome-card">
+
+            <h1>Welcome, <%= user.name %>!</h1>
+
+            <p>
+                Continue your magical journey and earn points for your house.
+            </p>
+
+        </div>
+
+        <div class="card-container">
+
+            <!-- House -->
+
+            <div class="card">
+
+                <h3>🏰 House</h3>
+
+                <p><%= user.house %></p>
+
+            </div>
+
+            <!-- XP -->
+
+            <div class="card">
+
+                <h3>⭐ XP</h3>
+
+                <p><%= user.xp %> / 100 XP</p>
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        style="width:<%= Math.min(user.xp,100) %>%"
+                    ></div>
+
+                </div>
+
+                <% if(user.xp < 100){ %>
+
+                    <small>
+
+                        <%= 100-user.xp %> XP until first charm.
+
+                    </small>
+
+                <% } else { %>
+
+                    <small>
+
+                        ✨ First Charm Unlocked!
+
+                    </small>
+
+                <% } %>
+
+            </div>
+
+            <!-- House Points -->
+
+            <div class="card">
+
+                <h3>🏆 House Points</h3>
+
+                <p><%= user.housePoints %></p>
+
+            </div>
+
+            <!-- Streak -->
+
+            <div class="card">
+
+                <h3>🔥 Study Streak</h3>
+
+                <p><%= user.streak %> Days</p>
+
+            </div>
+
+            <!-- Study Planner -->
+
+            <div class="card">
+
+                <h3>📚 Study Planner</h3>
+
+                <p>Manage your magical studies.</p>
+
+                <br>
+
+                <a href="/tasks" class="planner-btn">
+
+                    Open Planner
+
+                </a>
+
+            </div>
+
+            <!-- Charms -->
+
+            <div class="card">
+
+                <h3>🪄 Charms</h3>
+
+                <p>Unlock magical spells with XP.</p>
+
+                <br>
+
+                <a href="/charms" class="planner-btn">
+
+                    View Charms
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

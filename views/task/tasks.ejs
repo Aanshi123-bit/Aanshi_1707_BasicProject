@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study Planner | Hogwarts Academy</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>📚 Hogwarts Study Planner</h2>
+
+        <a href="/dashboard">Dashboard</a>
+
+    </nav>
+
+
+    <div class="task-container">
+
+        <h1>Create New Task</h1>
+
+        <form action="/tasks" method="POST" class="task-form">
+
+            <input
+                type="text"
+                name="title"
+                placeholder="Task Title"
+                required
+            >
+
+            <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+            >
+
+            <input
+                type="date"
+                name="deadline"
+                required
+            >
+
+            <select name="difficulty">
+
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+
+            </select>
+
+            <button type="submit">
+
+                Add Task
+
+            </button>
+
+        </form>
+
+        <hr>
+
+        <h1>Your Tasks</h1>
+
+        <% if(tasks.length===0){ %>
+
+            <p>No tasks yet.</p>
+
+        <% } %>
+
+        <% tasks.forEach(task=>{ %>
+
+            <div class="task-card">
+
+                <h2><%= task.title %></h2>
+
+                <p><strong>Subject:</strong> <%= task.subject %></p>
+
+                <p><strong>Deadline:</strong>
+                    <%= task.deadline.toDateString() %>
+                </p>
+
+                <p><strong>Difficulty:</strong>
+                    <%= task.difficulty %>
+                </p>
+
+                <p>
+
+                    <% if(task.completed){ %>
+
+                        <span class="completed">
+
+                            ✅ Completed
+
+                        </span>
+
+                    <% }else{ %>
+
+                        <span class="pending">
+
+                            ⏳ Pending
+
+                        </span>
+
+                    <% } %>
+
+                </p>
+
+                <% if(!task.completed){ %>
+
+                    <form
+                        action="/tasks/<%= task._id %>/complete"
+                        method="POST"
+                    >
+
+                        <button class="complete-btn">
+
+                            Complete
+
+                        </button>
+
+                    </form>
+
+                <% } %>
+
+                <form
+                    action="/tasks/<%= task._id %>/delete"
+                    method="POST"
+                >
+
+                    <button class="delete-btn">
+
+                        Delete
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+
+</body>
+
+</html>

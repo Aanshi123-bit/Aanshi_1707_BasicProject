@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Magical Charms</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <h2>🪄 Magical Charms</h2>
+
+    <a href="/dashboard">Dashboard</a>
+
+</nav>
+
+<div class="task-container">
+
+    <h1>Your Spell Collection</h1>
+
+    <div class="card">
+
+        <h2>Lumos</h2>
+
+        <% if(user.xp >= 100){ %>
+
+            <p class="completed">✅ Unlocked</p>
+
+        <% } else { %>
+
+            <p class="pending">🔒 Unlock at 100 XP</p>
+
+        <% } %>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Accio</h2>
+
+        <% if(user.xp >= 250){ %>
+
+            <p class="completed">✅ Unlocked</p>
+
+        <% } else { %>
+
+            <p class="pending">🔒 Unlock at 250 XP</p>
+
+        <% } %>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Protego</h2>
+
+        <% if(user.xp >= 500){ %>
+
+            <p class="completed">✅ Unlocked</p>
+
+        <% } else { %>
+
+            <p class="pending">🔒 Unlock at 500 XP</p>
+
+        <% } %>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Alohomora</h2>
+
+        <% if(user.xp >= 800){ %>
+
+            <p class="completed">✅ Unlocked</p>
+
+        <% } else { %>
+
+            <p class="pending">🔒 Unlock at 800 XP</p>
+
+        <% } %>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
