@@ -13,16 +13,11 @@ const charmRoutes = require("./routes/charm");
 
 const app = express();
 
-// =======================
 // Connect Database
-// =======================
-
 connectDB();
 
-// =======================
-// Middlewares
-// =======================
 
+// Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -36,16 +31,11 @@ app.use(
     })
 );
 
-// =======================
 // View Engine
-// =======================
-
 app.set("view engine", "ejs");
 
-// =======================
-// Routes
-// =======================
 
+// Routes
 app.get("/", (req, res) => {
     res.render("index");
 });
@@ -55,18 +45,14 @@ app.use("/", dashboardRoutes);
 app.use("/", taskRoutes);
 app.use("/", charmRoutes);
 
-// =======================
-// 404 Page
-// =======================
 
+// 404 Page
 app.use((req, res) => {
     res.status(404).send("404 | Page Not Found");
 });
 
-// =======================
-// Server
-// =======================
 
+// Server
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
