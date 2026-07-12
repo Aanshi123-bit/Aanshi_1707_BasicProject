@@ -114,7 +114,7 @@ hogwarts-academy/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/hogwarts-academy.git
+git clone https://github.com/Aanshi123-bit/Aanshi_1707_BasicProject.git
 ```
 
 ### 2. Move into the project directory
