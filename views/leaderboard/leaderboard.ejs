@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>House Cup Leaderboard</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>🏰 Hogwarts Academy</h2>
+
+        <a href="/dashboard">Dashboard</a>
+
+    </nav>
+
+    <div class="leaderboard-container">
+
+        <h1>🏆 House Cup Leaderboard</h1>
+
+        <table class="leaderboard-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Rank</th>
+
+                    <th>House</th>
+
+                    <th>House Points</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <% leaderboard.forEach((house, index) => { %>
+
+                    <tr>
+
+                        <td>
+
+                            <% if(index === 0){ %>
+                                🥇
+                            <% } else if(index === 1){ %>
+                                🥈
+                            <% } else if(index === 2){ %>
+                                🥉
+                            <% } else { %>
+                                <%= index + 1 %>
+                            <% } %>
+
+                        </td>
+
+                        <td>
+
+                            <%= house[0] %>
+
+                        </td>
+
+                        <td>
+
+                            <%= house[1] %>
+
+                        </td>
+
+                    </tr>
+
+                <% }) %>
+
+            </tbody>
+
+        </table>
+
+        <br>
+
+        <a href="/dashboard" class="planner-btn">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>
