@@ -50,6 +50,7 @@
             </div>
 
             <!-- XP -->
+
             <div class="card">
 
                 <h3>⭐ XP</h3>
@@ -60,7 +61,7 @@
 
                     <div
                         class="progress-fill"
-                        style="width:<%= Math.min(user.xp,100) %>%"
+                        style="width:<%= user.xp > 100 ? 100 : user.xp %>%"
                     ></div>
 
                 </div>
@@ -95,7 +96,7 @@
 
             </div>
 
-            <!-- Streak -->
+            <!-- Study Streak -->
 
             <div class="card">
 
@@ -136,6 +137,24 @@
                 <a href="/charms" class="planner-btn">
 
                     View Charms
+
+                </a>
+
+            </div>
+
+            <!-- House Cup -->
+
+            <div class="card">
+
+                <h3>🏆 House Cup</h3>
+
+                <p>See which Hogwarts House is leading the competition.</p>
+
+                <br>
+
+                <a href="/leaderboard" class="planner-btn">
+
+                    View Leaderboard
 
                 </a>
 
