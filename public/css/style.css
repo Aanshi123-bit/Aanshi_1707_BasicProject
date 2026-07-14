@@ -1111,3 +1111,125 @@ footer p{
     color:#C7B59A;
 
 }
+
+/* ===================================
+   HOUSE CUP LEADERBOARD
+=================================== */
+
+.leaderboard-container{
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 50px auto;
+
+    padding: 30px;
+
+    background: rgba(20,20,20,0.95);
+
+    border-radius: 15px;
+
+    box-shadow: 0 0 20px rgba(212,175,55,0.3);
+
+    text-align: center;
+
+}
+
+.leaderboard-container h1{
+
+    color: #D4AF37;
+
+    font-size: 38px;
+
+    margin-bottom: 30px;
+
+    font-family: "Cinzel", serif;
+
+}
+
+.leaderboard-table{
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-bottom: 30px;
+
+}
+
+.leaderboard-table th{
+
+    background: #5C4033;
+
+    color: #F5E6C8;
+
+    padding: 18px;
+
+    font-size: 20px;
+
+}
+
+.leaderboard-table td{
+
+    background: rgba(255,255,255,0.05);
+
+    color: white;
+
+    padding: 18px;
+
+    font-size: 18px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+}
+
+.leaderboard-table tr:hover{
+
+    background: rgba(212,175,55,0.15);
+
+    transition: 0.3s;
+
+}
+
+.planner-btn{
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #D4AF37;
+
+    color: #1A1A1A;
+
+    padding: 12px 24px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+.planner-btn:hover{
+
+    background: #FFD700;
+
+    transform: scale(1.05);
+
+}
+
+.card{
+
+    transition: 0.3s ease;
+
+}
+
+.card:hover{
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 0 20px rgba(212,175,55,0.25);
+
+}
